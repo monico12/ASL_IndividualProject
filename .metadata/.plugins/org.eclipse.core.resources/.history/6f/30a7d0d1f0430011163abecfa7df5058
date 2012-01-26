@@ -1,0 +1,14 @@
+﻿<cfparam name="survey" >
+
+<cfoutput >
+	
+	#startFormTag(action="home", controller="user")#
+	
+	#textField(label="Title", objectName="survey", property="title")#
+	#textArea(label="Description", objectName="survey", property="description")#
+	
+	#submitTag(value="Submit")#
+	
+	#endFormTag()#
+	
+</cfoutput>

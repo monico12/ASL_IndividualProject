@@ -1,0 +1,9 @@
+﻿<cfoutput>
+	
+	<ul>
+		<cfloop array="#survey#" index="1">
+			<li>#survey.title#</li>
+		</cfloop>	
+	</ul>
+	
+</cfoutput>

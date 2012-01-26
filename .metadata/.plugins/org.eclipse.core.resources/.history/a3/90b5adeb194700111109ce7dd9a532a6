@@ -1,0 +1,7 @@
+﻿<cfparam name="user" >
+<cfparam name="survey">
+<cfoutput >
+	#includePartial("login")#
+		
+	#includePartial("register")#
+</cfoutput>

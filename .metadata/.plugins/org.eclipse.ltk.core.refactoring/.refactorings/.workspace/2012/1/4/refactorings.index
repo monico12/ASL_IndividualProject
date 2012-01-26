@@ -1,0 +1,6 @@
+1327341644447	Delete resource 'ASL_Individual/views/landing'
+1327346178152	Delete resource 'ASL_Individual/views/user/create.cfm'
+1327350156441	Delete resource 'ASL_Individual/views/user/surveylist.cfm'
+1327351858496	Delete resource 'ASL_Individual/controllers/SurveyList.cfc'
+1327351934317	Delete resource 'ASL_Individual/views/main/home.cfm'
+1327434272696	Delete resource 'ASL_Individual/controllers/Landing.cfc'

@@ -1,0 +1,10 @@
+﻿<cfcomponent extends="Controller" output="false">
+	<cffunction name="takeSurvey">
+		
+	</cffunction>
+	
+	<cffunction name="createSurvey">
+		
+	</cffunction>
+	
+</cfcomponent>

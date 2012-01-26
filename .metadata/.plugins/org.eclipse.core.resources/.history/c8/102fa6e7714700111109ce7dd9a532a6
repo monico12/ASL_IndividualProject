@@ -1,0 +1,18 @@
+﻿<cfparam name="surveys" type="query" >
+<cfparam name="survey">
+
+<cfoutput >
+	#linkTo(text="logout", controller="user", action="landing")#
+	#linkTo(action="home", controller="user", text="Home")#	
+	#linkTo(action="questionlist", controller="main", text="Survey")#
+	
+	<h1>#survey.title#</h1>
+	<p>#survey.description#</p>
+	<ul><cfloop query="surveys">
+		#startFormTag(action="takesurvey")#
+	    <li>#surveys.title# #submitTag(value="Take Survey")#</li>	
+		
+		#endFormTag()#
+	    </cfloop>
+	</ul>
+</cfoutput>

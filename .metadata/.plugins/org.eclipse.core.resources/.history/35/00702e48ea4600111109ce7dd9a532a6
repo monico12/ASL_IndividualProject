@@ -1,0 +1,4 @@
+﻿<cfparam name="question" >
+<cfoutput>
+	#question.question#
+</cfoutput>

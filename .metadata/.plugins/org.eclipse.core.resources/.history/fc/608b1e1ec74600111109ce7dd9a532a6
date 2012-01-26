@@ -1,0 +1,39 @@
+﻿<cfcomponent extends="Controller" output="false">
+	
+	
+	<cffunction name="createsurvey" >
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="create">
+		<cfset survey = model("survey").new(params.survey)>
+		
+		<!--- sets userId --->
+		<cfset survey.userId = session.user.id>
+		<cfset survey.save()>
+	
+		<cfif survey.hasErrors()>
+			
+			
+		<cfelse>
+			<cfset renderPage(action="home", controller="user")>
+			<cfset redirectTo(controller="user", action="home")>
+		</cfif>
+		
+	</cffunction> 
+	
+	<cffunction name="createQuestion">
+		
+	</cffunction>
+	
+	<cffunction name="addQuestion">
+		<cfset survey = model("survey").new()>
+		<cfset question = model("question").new()>
+		
+		<cfset session.survey.id = survey.id>
+		
+	</cffunction> 
+	
+	
+	
+</cfcomponent>

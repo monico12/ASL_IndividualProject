@@ -1,0 +1,9 @@
+﻿
+
+<cfoutput>
+	#startFormTag(action="home")#
+	#textField(label="Username", property="username")#
+	#passwordField(label="Password", property="password")#
+	#submitTag(value="Log In")#
+	#endFormTag()#
+</cfoutput>

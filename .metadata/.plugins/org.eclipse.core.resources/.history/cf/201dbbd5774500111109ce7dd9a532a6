@@ -1,0 +1,76 @@
+﻿<cfcomponent extends="Controller" output="false">
+	
+	<cffunction name="register" >
+		<cfset user = model("user").new()>
+	</cffunction>
+	
+	<cffunction name="create">
+		
+		<!---<cfdump var = "#params#"><cfabort>--->
+		<cfset user = model("user").new(params.user)>
+		
+		<!--- salting and hashing password --->
+		<cfset salt="salt" />
+		<cfset passwordHash=Hash(user.password & salt, 'MD5' ) />
+		<cfset confirmPasswordHash=Hash(user.passwordConfirmation & salt, 'MD5' )/>
+		<cfoutput> #passwordHash#</cfoutput>
+		<cfset user.password = #passwordHash#>
+		<cfset user.passwordConfirmation = #confirmPasswordHash#>
+		<cfset user.save()>
+		
+		<cfif user.hasErrors()>
+			<cfset renderPage(action="register")>
+			
+		<cfelse>
+			<cfset session.user.id = user.id>
+			<cfset renderPage(action="home")>
+			<cfset redirectTo(controller="user", action="home")>
+			
+		</cfif>
+		
+	</cffunction>
+	
+	<!--- log out function - ends session and redirects them to the login page--->
+	<cffunction name="logout" >
+		
+		<cfset StructDelete(session, "user")>
+		<cfset redirectTo(controller="user", action="login")>
+		
+	</cffunction>
+	
+	<!--- creates an empty user object --->
+	<cffunction name="login">
+		<cfset user= model("user").new()>
+	</cffunction>
+	
+	<!--- log in function - starts session --->
+	<cffunction name="signin">
+		<cfset salt="salt" />
+		<cfset passwordHash=Hash(params.user.password & salt, 'MD5' ) />
+		<cfset user= model("user").findOne(where="username='#params.user.username#' AND password='#passwordHash#'")>
+		
+		<cfif IsObject(user)>
+			
+			<cfset session.user.id = user.id>
+			<cfset session.user.username = user.username>
+			<cfset renderPage(action="home")>
+			
+		<cfelse>
+			
+			<cfset user= model("user").new(email=params.user.username)>
+			<cfset flashInsert(error="Invalid username and password")>
+			<cfset renderPage(action="login")>
+			
+		</cfif>
+	</cffunction>
+	
+	<cffunction name="surveyList">
+		
+		<cfset surveys= model("survey").findAll(where="userId='#session.user.id#'")>
+		<cfdump var ="surveys">
+		
+	</cffunction> 
+	
+	
+	
+</cfcomponent>

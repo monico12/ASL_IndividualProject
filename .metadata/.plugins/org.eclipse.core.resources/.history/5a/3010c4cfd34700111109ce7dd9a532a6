@@ -1,0 +1,119 @@
+﻿<cfcomponent extends="Controller" output="false">
+	
+	
+	<cffunction name="createsurvey" >
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="takesurvey" >
+		<cfset surveys = model("surveys").findAll()>
+		<cfset survey = model("survey").new()>
+		<!---<cfset survey = model("survey").new(params.survey)>
+		
+		<cfset survey = model("survey").findOne(where="surveyId = #survey.id#")>
+		<!--- sets question surveyId to the current survey's id --->
+		<cfset question.surveyId = survey.id>
+		
+		<cfset questions = model("question").new()>
+		<cfset questions = model("question").findAll(where="surveyId = #survey.id#")>
+		--->
+	</cffunction>
+	
+	<cffunction name="survey" >
+		<cfset answer = model("answer").new()>
+		
+		<cfset questions = model("question").new()>
+		<cfset questions = model("question").findAll(where="surveyId = #params.key#")>
+		
+		<cfset survey = model("survey").new()>
+		<cfset survey = model("survey").findOne(where="id = #params.key#")>
+		
+		
+	</cffunction>
+	
+	<cffunction name="submit" >
+		
+		<cfloop collection="#params.answer#" item="key">
+			<cfset questions = model("question").new()>
+			<cfset questions = model("question").findAll(where="surveyId = #params.key#")>
+			<cfset answer = model("answer").new()>
+			<cfset answer.answer = params.answer[key]>
+			<cfset answer.userId = #session.user.id#>
+			<cfset answer.surveyId = url.key>
+			<cfset answer.save()>
+			<cfdump var="key">
+		</cfloop>
+		
+			<!---<cfset answer.questionId = >
+			<cfset answer.surveyId = >
+			<cfset answer.userId = #session.user.id#>
+			<cfset answer.save()>--->
+		
+		<!---<cfset answer.answer = params.answer>
+		<cfset answer.save()>--->
+		
+	</cffunction>
+	
+	<cffunction name="create">
+		<cfset survey = model("survey").new(params.survey)>
+		<cfset question = model("question").new()>
+		
+		<!--- sets userId --->
+		<cfset survey.userId = session.user.id>
+		<cfset survey.save()>
+		
+		<cfset surveyId = survey.id>
+		<cfset renderPage(action="createquestion", controller="main", surveyId="#surveyId#")>
+		
+		<cfif survey.hasErrors()>
+			
+			
+		<cfelse>
+			<cfset renderPage(action="createquestion", controller="main")>
+
+		</cfif>
+		
+	</cffunction> 
+	
+	<cffunction name="createQuestion">
+		<cfset question = model("question").new()>
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="addQuestion">
+		
+		<!--- saves form fields into a new question object --->
+		<cfset question = model("question").new(params.question)>
+		<!--- Gets current survey id--->
+		<cfset survey = model("survey").new()>
+		<cfset survey = model("survey").findOne(where="userId = #session.user.id#", order="id DESC")>
+		<!--- sets question surveyId to the current survey's id --->
+		<cfset question.surveyId = survey.id>
+		
+		<!--- creates question list object --->
+		<cfset questions = model("question").new()>
+		<cfset questions = model("question").findAll(where="surveyId = #survey.id#")>
+		
+		<cfset question.save()>
+		
+		<cfif IsObject(question)>
+			
+			
+			<cfset question = model("question").new(question="")>
+			<cfset renderPage(action="createquestion", controller="main")>
+		<cfelse>
+			<cfset renderPage(action="home", controller="user")>
+			
+		</cfif>
+		
+	</cffunction> 
+	<cffunction name="questionlist">
+		<cfset survey = model("survey").new()>
+		<!--- sets question surveyId to the current survey's id --->
+		<cfset question.surveyId = survey.id>
+		
+		<cfset questions = model("question").new()>
+		<cfset questions = model("question").findAll(where="surveyId = #survey.id#")>
+		
+	</cffunction> 
+</cfcomponent>

@@ -1,0 +1,7 @@
+﻿<cfparam name="question" >
+<cfoutput>
+	<cfloop index="i" from="1" to="10" >
+	#question.question#
+	#question.choices#
+	</cfloop>
+</cfoutput>

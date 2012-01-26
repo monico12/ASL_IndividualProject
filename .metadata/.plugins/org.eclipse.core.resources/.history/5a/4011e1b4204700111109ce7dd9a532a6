@@ -1,0 +1,9 @@
+﻿<cfparam name="question" >
+<cfparam name="survey" >
+<cfparam name="questions" type="query" > 
+<cfoutput>
+<!--- TODO display questions --->
+	#includePartial("createquestion")#
+	
+	
+</cfoutput>

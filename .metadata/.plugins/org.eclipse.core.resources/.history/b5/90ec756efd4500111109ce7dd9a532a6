@@ -1,0 +1,14 @@
+﻿<cfparam name="user">
+
+<cfoutput>
+	
+	#startFormTag(action="signin")#
+	#textField(label="Username", objectName="user", property="username")#
+	#passwordField(label="Password", objectName="user", property="password")#
+	#submitTag(value="Sign in")#
+	#endFormTag()#
+	
+	
+	
+	
+</cfoutput>

@@ -1,0 +1,6 @@
+﻿
+
+
+<cfoutput>
+	<cfset renderPartial("login")>
+</cfoutput>

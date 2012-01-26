@@ -1,0 +1,9 @@
+<!--- Place HTML here that should be used as the default layout of your application --->
+<cfoutput>
+<html>
+	<body>
+		#linkTo(text="logout", controller="user", action="logout")#
+		#includeContent()#
+	</body>
+</html>
+</cfoutput>

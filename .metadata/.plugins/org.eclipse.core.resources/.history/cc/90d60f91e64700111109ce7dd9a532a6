@@ -1,0 +1,9 @@
+﻿
+<cfparam name="results" type="query">
+<cfoutput>
+	<cfloop query="users">
+			<cfset usernames = model("user").findAll(where="id = #users.userId#")>
+			
+		</cfloop>
+		<cfdump var="#usernames#">
+</cfoutput>

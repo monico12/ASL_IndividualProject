@@ -1,0 +1,7 @@
+﻿<cfparam name="user" >
+
+<cfoutput >
+	#startFormTag(action="createUser")#
+	#textField(label="First Name", objectName="user", property="firstName")#
+	#endFormTag()#
+</cfoutput>

@@ -1,0 +1,23 @@
+﻿<cfparam name="survey" >
+
+<cfoutput >
+	
+	<div class="nav">
+	<ul>
+	<li>#linkTo(action="home", controller="user", text="Home")#</li>
+	<li>#linkTo(action="questionlist", controller="main", text="Survey")#</li>
+	<li>#linkTo(text="logout", controller="user", action="landing")#</li>
+	</ul>
+	</div>
+	
+	<div id="createsurveyform">
+	#startFormTag(action="create")#
+	<ul>
+	<li>#textField(label="Title", objectName="survey", property="title")#</li>
+	<li>#textArea(label="Description", objectName="survey", property="description")#</li>
+	
+	<li>#submitTag(value="Submit", class="button")#</li>
+	</ul>
+	#endFormTag()#
+	</div>
+</cfoutput>

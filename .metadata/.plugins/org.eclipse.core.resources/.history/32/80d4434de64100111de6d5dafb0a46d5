@@ -1,0 +1,15 @@
+﻿<cfoutput>
+
+#startFormTag(action="save")#
+
+#textField(
+label="Last Name", objectName="profile", property="lastName",
+prependToLabel="<div>", append="</div>", labelPlacement="before"
+)#
+<div>
+#submitTag()#
+</div>
+
+#endFormTag()#
+
+</cfoutput>

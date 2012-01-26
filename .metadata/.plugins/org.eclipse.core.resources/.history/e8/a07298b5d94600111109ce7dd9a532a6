@@ -1,0 +1,16 @@
+﻿<cfparam name="question" >
+
+<cfoutput >
+	#startFormTag(action="addQuestion")#
+	<cfloop index="j" from="1" to="10" >
+	#textField(label="Question", objectName="question", property="question")#
+	<cfloop index="i" from="1" to="4" >
+	#radioButton(objectName="question", property="answer", tagValue="#i#", label="")#
+	#textField(label="choice #i#", objectName="question", property="choices")# 
+	</cfloop></br>
+	</cfloop>
+	#submitTag(value="Add")#
+	
+	#endFormTag()#
+	
+</cfoutput>

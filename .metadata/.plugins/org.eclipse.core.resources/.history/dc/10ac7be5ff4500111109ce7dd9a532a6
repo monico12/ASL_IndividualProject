@@ -1,0 +1,13 @@
+﻿<cfparam name="survey">
+
+<cfoutput>
+	
+    <!---<cfloop from="1" to="10" index="i">
+        #select(label="#survey.title[i]#", objectName="survey", property="title", options="survey")#
+	</cfloop>--->
+	<!---<ul><cfloop query="survey" >
+		<li>#linkTo(text="#survey.title#", controller="main", action="displayList")#</li>
+	</cfloop></ul>
+    <cfdump var="#survey#" >--->
+	
+</cfoutput>

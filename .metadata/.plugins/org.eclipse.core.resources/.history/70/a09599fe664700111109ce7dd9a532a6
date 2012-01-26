@@ -1,0 +1,5 @@
+﻿<cfparam name="survey" >
+<cfparam name="question" >
+<cfoutput >
+	
+</cfoutput>

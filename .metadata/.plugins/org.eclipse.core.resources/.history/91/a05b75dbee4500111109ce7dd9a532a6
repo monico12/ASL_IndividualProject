@@ -1,0 +1,10 @@
+<!--- Place HTML here that should be used as the default layout of your application --->
+<cfoutput>
+<html>
+	<body>
+		#styleSheetLinkTag(source="main", head=true)#
+		
+		#includeContent()#
+	</body>
+</html>
+</cfoutput>

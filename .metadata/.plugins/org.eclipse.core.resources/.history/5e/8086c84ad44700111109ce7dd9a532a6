@@ -1,0 +1,14 @@
+﻿<!---<cfdump var="#answer#" >
+<cfdump var="#params.answer#">
+
+<cfdump var="#params.surveyId#">
+--->
+<cfdump var="#url#" >
+<cfoutput>
+	<cfloop collection="#params.answer#" item="key">
+		<cfset answer.answer = params.answer[key]>
+		<cfset answer.userId = #session.user.id#>
+		<cfset answer.surveyId = url.key>
+		<cfset answer.save()>		
+	</cfloop>
+</cfoutput>

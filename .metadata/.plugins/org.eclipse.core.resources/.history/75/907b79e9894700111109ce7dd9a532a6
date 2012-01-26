@@ -1,0 +1,38 @@
+﻿<cfparam name="survey" >
+
+<cfparam name="answer" >
+<cfparam name="questions" type="query">
+<cfdump var="#params.key#" >
+<cfdump var="#questions#" >
+
+<cfoutput >
+
+	#startFormTag(action="submit")#
+	<cfloop query="questions">
+		<fieldset>
+        	<legend>Question: #questions.question#</legend>
+     		<cfset stringData = #questions.choices#>
+				<cfset arrData = ListToArray(
+					stringData,
+					","
+					) >
+				<ul>
+					#startFormTag()#
+					<cfloop index="i" from="1" to="4">
+						<li>
+							
+							#radioButton(objectName="answer", property="answer", tagValue="#i#", label="")#
+							#arrData[i]#
+							
+						</li>
+					</cfloop>
+					#endFormTag()#
+					
+    	</fieldset>
+				
+	</cfloop>
+	
+	#submitTag(value="Submit Answers", class="button")#
+	#endFormTag()#
+	
+</cfoutput>

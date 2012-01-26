@@ -1,0 +1,38 @@
+﻿<cfcomponent extends="Controller" output="false">
+	<cffunction name="register" >
+		<cfset user = model("user").new()>
+	</cffunction>
+	
+	<cffunction name="create">
+		
+		<!---<cfdump var = "#params#"><cfabort>--->
+		<cfset user = model("user").new(params.user)>
+		
+		<!--- salting and hashing password --->
+		<cfset salt=createUUID() />
+		<cfset passwordHash=Hash(user.password & salt, 'MD5' ) />
+		<cfset confirmPasswordHash=Hash(user.passwordConfirmation & salt, 'MD5' )/>
+		<cfoutput> #passwordHash#</cfoutput>
+		<cfset user.password = #passwordHash#>
+		<cfset user.passwordConfirmation = #confirmPasswordHash#>
+		<cfset user.save()>
+		
+		<cfif user.hasErrors()>
+			<cfset renderPage(action="register")>
+			
+		<cfelse>
+			<cfset redirectTo(controller="main", action="home")>
+			
+		</cfif>
+		
+	</cffunction>
+	
+	<cffunction name="signin">
+		<cfset user = model("user").new()>
+	</cffunction>
+	
+	<cffunction name="login" >
+		s
+	</cffunction>
+		
+</cfcomponent>

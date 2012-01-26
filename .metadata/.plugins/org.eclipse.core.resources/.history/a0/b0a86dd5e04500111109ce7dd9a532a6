@@ -1,0 +1,13 @@
+﻿<cfparam name="question" >
+
+<cfoutput >
+	
+	#startFormTag(action="create")#
+	
+	
+	
+	#textField(label="Question", objectName="question", property="question")#
+	
+	#submitTag(value="Sign Up")#
+	#endFormTag()#
+</cfoutput>

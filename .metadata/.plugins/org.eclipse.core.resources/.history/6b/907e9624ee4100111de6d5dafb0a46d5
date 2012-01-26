@@ -1,0 +1,7 @@
+﻿<cfparam name="user" >
+
+<cfoutput >
+	#startFormTag(action="createUser")#
+	
+	#endFormTag()#
+</cfoutput>

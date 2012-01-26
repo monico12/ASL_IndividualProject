@@ -1,0 +1,14 @@
+﻿
+
+<cfoutput >
+	
+	#startFormTag(action="create")#
+	
+	#textField(label="Title", objectName="survey", property="title")#
+	#textArea(label="Description", objectName="survey", property="biography", rows="5", cols="40")#
+	
+	#submitTag(value="Submit")#
+	
+	#endFormTag()#
+	
+</cfoutput>

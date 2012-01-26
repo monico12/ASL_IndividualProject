@@ -1,0 +1,28 @@
+﻿<cfparam name="question" >
+<cfparam name="survey" >
+
+<cfoutput >
+	
+	#linkTo(text="logout", controller="user", action="landing")#
+	#linkTo(action="home", controller="user", text="Home")#	
+	#linkTo(text="Save", action="questionlist", controller="main")#
+	
+	#startFormTag(action="addQuestion")#
+	<div id="questionform>"
+	#textField(label="Question", objectName="question", property="question")#
+	<ul>
+	<cfloop index="i" from="1" to="4" >
+	<li>
+	#radioButton(objectName="question", property="answer", tagValue="#i#", label="")#
+	#textField(label="choice #i#", objectName="question", property="choices")#
+	</li>
+	</cfloop>
+	</ul>
+	</div>
+	#submitTag(value="Add")#
+
+	#endFormTag()#
+
+	#includePartial("questionlist")#
+	
+</cfoutput>

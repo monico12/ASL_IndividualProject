@@ -1,0 +1,9 @@
+﻿<cfparam name="surveys" type="query" >
+
+<cfdump var="#surveys#" >
+
+<cfoutput >
+	<cfloop query="surveys">
+		
+	</cfloop>
+</cfoutput>

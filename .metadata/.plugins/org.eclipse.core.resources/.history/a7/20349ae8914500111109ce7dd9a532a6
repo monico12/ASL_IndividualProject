@@ -1,0 +1,6 @@
+﻿<cfparam name="survey" >
+
+<cfoutput>
+	<p>#survey.description#</p>
+	
+</cfoutput>

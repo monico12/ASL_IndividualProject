@@ -1,0 +1,4 @@
+﻿<cfparam name="user" >
+<cfoutput>
+	<cfset includePartial("login")>
+</cfoutput>

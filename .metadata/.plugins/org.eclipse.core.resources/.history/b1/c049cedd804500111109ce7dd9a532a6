@@ -1,0 +1,7 @@
+﻿<cfparam name="survey" >
+
+<cfoutput>
+	
+	<cfdump var="#survey#" >
+	
+</cfoutput>

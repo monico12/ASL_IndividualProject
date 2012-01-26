@@ -1,0 +1,7 @@
+﻿<cfoutput >
+	<h1>home page</h1>
+	
+	#linkTo(text="Create a Survey")#
+	#linkTo(text="Take a Survey")#
+	
+</cfoutput>

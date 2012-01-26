@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="com.adobe.ide.coldfusion.feature:2.0.0.277745"/>
+		<item value="com.adobe.ide.coldfusion.rcp.feature:2.0.0.277745-7P7R8jD0x6kN-QGQo4VNY5q-vyxB"/>
+		<item value="com.aptana.ide.feature.editors:1.5.0.25222-7hAN69ggd-C"/>
+		<item value="com.aptana.ide.feature.syncing.ftp:1.5.0.25222-47E-7BLBEG"/>
+		<item value="com.aptana.ide.feature:1.5.0.26257-7C7f17oUYhnNFlz--J383275"/>
+		<item value="org.eclipse.draw2d:3.6.2.v20110128-0100-4517w3122123901211"/>
+		<item value="org.eclipse.eclipsemonkey:1.5.0.25222-67O-7JYJJJ"/>
+		<item value="org.eclipse.gef:3.6.2.v20110128-0100-777B381A4Bz06565376E32322"/>
+		<item value="org.eclipse.help:1.2.1.r362_v20101111-7e7jEVFDr6xg-LSlC_z0w1D"/>
+		<item value="org.eclipse.jdt:3.6.2.r362_v20101117-0800-7z8XFW6FLFlmjJcvz03jyeFBLS_F"/>
+		<item value="org.eclipse.platform:3.6.2.r362_v20110210-9gF78Gs1FrIGnHDHWkEcopoN8AmxeZflGDGKQi"/>
+		<item value="org.eclipse.rcp:3.6.2.r362_v20101104-9SAxFMKFkSAqi8axkv1ZjegmiBLY"/>
+	</list>
+	<section name="ResourceNavigator">
+		<item value="" key="ResourceWorkingSetFilter.STORE_WORKING_SET"/>
+		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
+	</section>
+</section>

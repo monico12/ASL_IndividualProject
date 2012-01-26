@@ -1,0 +1,10 @@
+﻿
+<cfoutput >
+	<h1>Welcome #linkTo(text="#session.user.username#", controller="main", action="createSurvey")#</h1>
+	
+	#linkTo(text="Create a Survey", controller="main", action="createSurvey")#
+	#linkTo(text="Take a Survey", controller="main", action="takeSurvey")#
+	
+	
+	
+</cfoutput>

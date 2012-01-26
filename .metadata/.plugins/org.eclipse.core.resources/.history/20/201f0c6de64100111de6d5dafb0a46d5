@@ -1,0 +1,12 @@
+﻿<cfoutput>
+
+#startFormTag(action="save")#
+
+#textField(label="Last Name", property="lastName")#
+<div>
+#submitTag()#
+</div>
+
+#endFormTag()#
+
+</cfoutput>

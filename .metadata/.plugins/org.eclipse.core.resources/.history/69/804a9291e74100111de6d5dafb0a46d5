@@ -1,0 +1,9 @@
+﻿<cfoutput>
+
+#startFormTag(action="save")#
+
+#textField(label="Username", property="username")#
+
+#endFormTag()#
+
+</cfoutput>

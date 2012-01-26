@@ -1,0 +1,9 @@
+﻿<cfparam name="survey" >
+
+<cfoutput >
+	<h1>home page</h1>
+	
+	#linkTo(text="Create a Survey", controller="main", action="createSurvey")#
+	#linkTo(text="Take a Survey", controller="main", action="takeSurvey")#
+	
+</cfoutput>

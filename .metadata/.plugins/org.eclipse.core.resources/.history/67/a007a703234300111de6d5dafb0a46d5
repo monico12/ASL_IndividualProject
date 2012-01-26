@@ -1,0 +1,7 @@
+﻿<cfcomponent extends="Model" output="false">
+	<cffunction name="init" >
+		<cfset validatesPresenceOf("firstName, lastName, email, username, password, repassword")>
+		<cfset validatesUniquenessOf("email, username")>
+		<cfset validatesConfirmationOf("password")>
+	</cffunction>
+</cfcomponent>

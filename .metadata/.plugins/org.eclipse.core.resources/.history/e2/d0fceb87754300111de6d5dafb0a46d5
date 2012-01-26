@@ -1,0 +1,15 @@
+﻿<cfcomponent extends="Controller" output="false">
+	<cffunction name="login">
+		<cfset user= model("user").new()>
+	</cffunction>
+	
+	<cffunction name="signin">
+		<cfset user= model("user").findOne(where="email='#params.user.email#' AND password='#params.user.password#'")>
+		
+		<cfif IsObject(user)>
+			<cfset session.user.id = user.id>
+		<cfelse>
+				
+		</cfif>
+	</cffunction> 
+</cfcomponent>

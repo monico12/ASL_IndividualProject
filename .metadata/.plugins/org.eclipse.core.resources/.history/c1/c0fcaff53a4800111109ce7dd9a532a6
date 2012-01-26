@@ -1,0 +1,12 @@
+﻿<cfdump var="#questions#" >
+<cfdump var="#usernames#">
+<cfoutput >
+	<ul>
+		<cfloop index="i" from="1" to="#ArrayLen(usernames)#">
+			<li>#usernames#</li>
+			<cfloop query="questions">
+				<p>Question: #questions.questionId#, Answer: #questions.answer#</p>
+			</cfloop>
+		</cfloop>
+	</ul>
+</cfoutput>

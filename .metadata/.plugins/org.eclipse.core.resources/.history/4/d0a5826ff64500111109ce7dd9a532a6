@@ -1,0 +1,5 @@
+﻿<cfparams name="user">
+
+<cfoutput>
+	#includePartial("login")#
+</cfoutput>

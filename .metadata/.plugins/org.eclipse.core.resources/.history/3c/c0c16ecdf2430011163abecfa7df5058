@@ -1,0 +1,7 @@
+﻿<cfcomponent extends="Model" output="false">
+	<cffunction name="init" >
+		<!--- checks if the input fields are empty --->
+		<cfset validatesPresenceOf("title, description")>
+		
+	</cffunction>
+</cfcomponent>

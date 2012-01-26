@@ -1,0 +1,8 @@
+﻿<cfparam name="user" >
+
+
+<cfoutput>
+	<cfinclude template="login.cfm" >
+	
+	<!---<cfinclude template="register.cfm" >--->
+</cfoutput>

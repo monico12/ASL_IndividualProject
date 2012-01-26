@@ -1,0 +1,58 @@
+﻿<cfcomponent extends="Controller" output="false">
+	
+	
+	<cffunction name="createsurvey" >
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="create">
+		<cfset survey = model("survey").new(params.survey)>
+		<cfset question = model("question").new()>
+		
+		<!--- sets userId --->
+		<cfset survey.userId = session.user.id>
+		<cfset survey.save()>
+		
+		<cfset surveyId = survey.id>
+		<cfset renderPage(action="createquestion", controller="main", surveyId="#surveyId#")>
+		
+		<cfif survey.hasErrors()>
+			
+			
+		<cfelse>
+			<cfset renderPage(action="createquestion", controller="main")>
+
+		</cfif>
+		
+	</cffunction> 
+	
+	<cffunction name="createQuestion">
+		<cfset question = model("question").new()>
+		
+	</cffunction>
+	
+	<cffunction name="addQuestion">
+		
+		<!--- saves form fields into a new question object --->
+		<cfset question = model("question").new(params.question)>
+		<!--- Gets current survey id--->
+		<cfset survey = model("survey").new()>
+		<cfset survey = model("survey").findOne(where="userId = #session.user.id#", order="id DESC")>
+		<!--- sets question surveyId to the current survey's id --->
+		<cfset question.surveyId = survey.id>
+		
+		<cfset questions = model("question").new()>
+		<cfset questions = model("question").findAll(where="surveyId = #survey.id#")>
+		
+		<cfset question.save()>
+		
+		<cfif IsObject(question)>
+			<cfset renderPage(action="home", controller="user")>
+		<cfelse>
+			<cfset renderPage(action="home", controller="user")>
+			
+		</cfif>
+		
+	</cffunction> 
+
+</cfcomponent>

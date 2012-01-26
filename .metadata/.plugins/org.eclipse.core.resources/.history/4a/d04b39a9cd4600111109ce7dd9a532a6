@@ -1,0 +1,15 @@
+﻿<cfparam name="question" >
+
+<cfoutput >
+	#startFormTag(action="addQuestion")#
+	
+	#textField(label="Question", objectName="question", property="question")#
+	<cfloop index="i" from="1" to="4" >
+	#textField(label="choices #i#", objectName="question", property="choices")# 
+	</cfloop>
+	
+	#submitTag(value="Add")#
+	
+	#endFormTag()#
+	
+</cfoutput>

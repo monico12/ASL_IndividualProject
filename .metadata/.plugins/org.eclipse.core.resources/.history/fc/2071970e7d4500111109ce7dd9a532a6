@@ -1,0 +1,6 @@
+﻿<cfcomponent extends="Controller" output="false">
+
+	<cffunction name="list">
+		<cfset surveys= model("survey").findAll(where="userId='#session.user.id#'")>
+	</cffunction> 
+</cfcomponent>

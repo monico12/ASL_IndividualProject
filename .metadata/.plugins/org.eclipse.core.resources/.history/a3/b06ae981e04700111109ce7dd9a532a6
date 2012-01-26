@@ -1,0 +1,8 @@
+﻿<cfdump var="#results#">
+<cfparams name="results" type="query">
+
+<cfoutput>
+	<cfloop query="results">
+		#results.userId#
+	</cfloop>
+</cfoutput>

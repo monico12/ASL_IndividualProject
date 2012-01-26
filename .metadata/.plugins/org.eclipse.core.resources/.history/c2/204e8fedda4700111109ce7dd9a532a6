@@ -1,0 +1,3 @@
+﻿<cfparam name="survey" type="query" >
+
+<cfdump var="#survey#" >

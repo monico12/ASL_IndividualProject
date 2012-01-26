@@ -1,0 +1,8 @@
+﻿<cfparam name="surveys" type="query" >
+
+<cfoutput >
+	<ul><cfloop query="surveys">
+	    <li>#linkTo(text="#surveys.title#", controller="main", action="survey")#</li>	
+	    </cfloop>
+	</ul>
+</cfoutput>

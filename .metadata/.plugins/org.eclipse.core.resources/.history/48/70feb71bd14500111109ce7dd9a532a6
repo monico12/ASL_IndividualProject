@@ -1,0 +1,10 @@
+﻿<cfparam name="surveyList" >
+
+<cfoutput>
+	
+    <!---<cfloop from="1" to="10" index="i">
+        #select(label="#survey.title[i]#", objectName="survey", property="title", options="survey")#
+	</cfloop>--->
+    <!---<cfdump var="#survey#" >--->
+	
+</cfoutput>

@@ -1,0 +1,11 @@
+﻿<cfdump var="#answer#" >
+<cfdump var="#params.answer#">
+
+<cfoutput>
+<cfloop index="i" from="1" to="5">
+			<cfset answer.answer = params.answer[i]>
+			<h1>yo</h1>
+			<p>#answer.answer#</p>
+		</cfloop>
+		
+</cfoutput>

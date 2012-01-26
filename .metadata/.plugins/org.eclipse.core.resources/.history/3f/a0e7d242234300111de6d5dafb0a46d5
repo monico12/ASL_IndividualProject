@@ -1,0 +1,10 @@
+﻿<cfcomponent extends="Model" output="false">
+	<cffunction name="init" >
+		<!--- checks if the input fields are empty --->
+		<cfset validatesPresenceOf("firstName, lastName, email, username, password, repassword")>
+		<!--- checks database if email or username has been used --->
+		<cfset validatesUniquenessOf("email, username")>
+		<!--- checks if password matches confirmation password --->
+		<cfset validatesConfirmationOf("password")>
+	</cffunction>
+</cfcomponent>

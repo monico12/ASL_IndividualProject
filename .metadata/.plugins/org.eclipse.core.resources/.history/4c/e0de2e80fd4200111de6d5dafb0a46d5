@@ -1,0 +1,22 @@
+﻿<cfcomponent extends="Controller" output="false">
+	<cffunction name="register" >
+		<cfset user = model("user").new()>
+	</cffunction>
+	
+	<cffunction name="create">
+		
+		<!---<cfdump var = "#params#"><cfabort>--->
+		<cfset user = model("user").new(params.user)>
+		<cfset user.save()>
+		
+		<cfif user.hasErrors()>
+			<cfset renderPage(action="register")>
+		</cfif>
+		
+	</cffunction>
+	
+	<cffunction name="home">
+		
+		<!---<cfset user = model("user").findOne(where="username='params.user'")>--->
+	</cffunction> 
+</cfcomponent>

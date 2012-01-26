@@ -1,0 +1,25 @@
+﻿<cfcomponent extends="Controller" output="false">
+	
+	
+	<cffunction name="survey" >
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="createSurvey">
+		<cfset survey = model("survey").new(params.survey)>
+		
+		<cfset survey.save()>
+		
+		<cfif survey.hasErrors()>
+			
+			
+		<cfelse>
+			
+			
+		</cfif>
+	
+		
+		
+	</cffunction> 
+	
+</cfcomponent>

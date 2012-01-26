@@ -1,0 +1,10 @@
+﻿<cfparam name="survey" >
+
+<cfoutput>
+	
+    <cfloop from="1" to="#ArrayLen(survey)#" index="i">
+        #select(label="#survey.title[i]#", objectName="survey")#
+	</cfloop>
+    <!---<cfdump var="#survey#" >--->
+	
+</cfoutput>

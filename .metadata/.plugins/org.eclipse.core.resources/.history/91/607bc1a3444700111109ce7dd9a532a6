@@ -1,0 +1,16 @@
+﻿<cfparam name="questions" type="query" >
+<cfoutput>
+	<ul><cfloop query="questions">
+	    	<li>#questions.question#</li>
+				<cfset arrData = ListToArray(
+					#questions.choices#,
+					","
+					) />
+				<ul>
+					<cfloop array="arrData" index="i">
+						<li>arrData[i]</li>
+					</cfloop>
+				</ul>
+	    </cfloop>
+	</ul>
+</cfoutput>

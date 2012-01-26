@@ -1,0 +1,9 @@
+﻿<cfparam name="user" >
+
+<cfoutput >
+	<div class="nav">
+	</div>
+	#includePartial("login")#
+	
+	#includePartial("register")#
+</cfoutput>

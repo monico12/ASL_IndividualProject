@@ -1,0 +1,66 @@
+﻿<cfcomponent extends="Controller" output="false">
+	
+	
+	<cffunction name="createsurvey" >
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="create">
+		<cfset survey = model("survey").new(params.survey)>
+		<cfset question = model("question").new()>
+		
+		<!--- sets userId --->
+		<cfset survey.userId = session.user.id>
+		<cfset survey.save()>
+		<cfset renderPage(action="createquestion", controller="main")>
+		
+		<cfif survey.hasErrors()>
+			
+			
+		<cfelse>
+			<cfset renderPage(action="createquestion", controller="main")>
+
+		</cfif>
+		
+	</cffunction> 
+	
+	<cffunction name="createQuestion">
+		<cfset question = model("question").new()>
+		<cfset survey = model("survey").new()>
+	</cffunction>
+	
+	<cffunction name="addQuestion">
+		
+		<!---<cfdump var="#question#" ><cfabort>--->
+		
+		<cfset question = model("question").new(params.question)>
+		
+		<!---<cfset question.surveyId = >--->
+		<!---<cfset question.answer = params.answer>--->
+		<!---<cfset redirectTo(action="home", controller="user")>--->
+		<cfset count = 0>
+		
+		
+		<cfset question.save()>
+		
+		
+		<cfif count is 10>
+			<cfset renderPage(action="home", controller="main")>
+		<cfelse>
+			<cfset renderPage(action="createquestion", controller="main")>
+			<cfset count++>
+		</cfif>
+		
+		<!---<cfif IsObject(question)>
+			
+			
+		<cfelse>
+			<cfset renderPage(action="home")>
+			
+		</cfif>--->
+		
+	</cffunction> 
+	
+	
+	
+</cfcomponent>

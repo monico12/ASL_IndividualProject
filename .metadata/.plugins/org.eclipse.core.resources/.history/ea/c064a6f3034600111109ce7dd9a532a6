@@ -1,0 +1,7 @@
+﻿<cfcomponent extends="Controller" output="false">
+
+	<cffunction name="list">
+		<cfset surveys= model("survey").findAll(where="userId='#session.user.id#'")>
+		<cfset redirectTo(controller="user", action="surveyList")>
+	</cffunction> 
+</cfcomponent>

@@ -1,0 +1,16 @@
+﻿<cfdump var="#questions#" >
+<cfdump var="#usernames#">
+<cfoutput >
+	<ul>
+	<cfloop query="users" >	
+		<cfdump var="#users#" >
+		<cfloop query="usernames">
+			<cfdump var="#usernames#" >
+			<li>#usernames.username#</li>
+			<cfloop query="questions">
+				<p>Question: #questions.questionId#, Answer: #questions.answer#</p>
+			</cfloop>
+		</cfloop>
+	</cfloop>
+	</ul>
+</cfoutput>

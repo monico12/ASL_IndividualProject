@@ -1,0 +1,8 @@
+﻿<cfdump var="#questions#" >
+<cfoutput >
+	<cfloop query="questions">
+		<p>Question: #questions.questionId#, Answer: #questions.answer#</p>
+		<cfdump var="#questions.answer#" >
+		<cfdump var="#questions.questionId#" >
+	</cfloop>
+</cfoutput>

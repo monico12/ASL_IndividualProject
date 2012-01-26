@@ -1,0 +1,25 @@
+﻿<cfoutput>
+
+#startFormTag(action="save")#
+
+#textField(
+label="First Name", objectName="profile", property="firstName",
+#prependToLabel="<div>", append="</div>", labelPlacement="before"
+)#
+#textField(
+label="Last Name", objectName="profile", property="lastName",
+prependToLabel="<div>", append="</div>", labelPlacement="before"
+)#
+#select(
+label="Department", objectName="profile", property="departmentId",
+options=departments,
+prependToLabel="<div>", append="</div>", labelPlacement="before"
+)#
+<div>
+#hiddenField(objectName="department", property="id")#
+#submitTag()#
+</div>
+
+#endFormTag()#
+
+</cfoutput>

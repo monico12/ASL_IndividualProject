@@ -1,0 +1,7 @@
+﻿<cfdump var="#results#">
+<cfparam name="results" type="query">
+<cfdump var ="#users#">
+<cfdump var ="#usernames#">
+<cfoutput>
+	
+</cfoutput>

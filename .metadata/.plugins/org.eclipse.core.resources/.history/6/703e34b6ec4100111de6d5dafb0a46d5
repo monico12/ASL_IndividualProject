@@ -1,0 +1,6 @@
+﻿<cfcomponent extends="Controller" output="false">
+	<cffunction name="register" >
+		<cfset user = model("user").new()>
+		<cfdump var ="#user#"><cfabort>
+	</cffunction>
+</cfcomponent>

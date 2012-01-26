@@ -1,0 +1,12 @@
+﻿<cfparam name="survey" >
+
+<cfoutput >
+	#startFormTag(action="create")#
+	
+	#textField(label="Title", objectName="survey", property="title")#
+	#textArea(label="Description", objectName="survey", property="description")#
+	
+	#submitTage(valude="Submit")#
+	
+	#endFormTag()#
+</cfoutput>

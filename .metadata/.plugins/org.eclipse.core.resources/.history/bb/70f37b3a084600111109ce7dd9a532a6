@@ -1,0 +1,21 @@
+﻿<!---<cfparam name="survey" type="query" >
+<cfoutput >
+	#linkTo(text="logout", controller="user", action="logout")#
+	<h1>Welcome #linkTo(text="#session.user.username#", controller="main", action="createSurvey")#</h1>
+	
+	#linkTo(text="Create a Survey", controller="main", action="createSurvey")#
+	#linkTo(text="Take a Survey", controller="main", action="takeSurvey")#
+	
+	<ul><cfloop query="survey">
+	    <li>#linkTo(text="#survey.title#", controller="main", action="displayList")#</li>	
+	    </cfloop>
+	</ul>
+	
+</cfoutput>--->
+
+<cfoutput>
+	#linkTo(text="logout", controller="user", action="logout")#
+	<h1>Welcome #linkTo(text="#session.user.username#", controller="main", action="createSurvey")#</h1>
+</cfoutput>
+
+

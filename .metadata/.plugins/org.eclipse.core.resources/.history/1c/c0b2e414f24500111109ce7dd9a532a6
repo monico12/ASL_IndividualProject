@@ -1,0 +1,6 @@
+﻿
+
+
+<cfoutput>
+	<cfinclude template="login.cfm" >
+</cfoutput>
